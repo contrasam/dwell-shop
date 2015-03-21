@@ -1,3 +1,5 @@
+DROP TABLE IF EXISTS `dwell_shop`.`properties` ;
+
 CREATE TABLE IF NOT EXISTS `dwell_shop`.`properties` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `location_id` INT NULL,
@@ -13,13 +15,13 @@ CREATE TABLE IF NOT EXISTS `dwell_shop`.`properties` (
   INDEX `FK_property_location_idx` (`location_id` ASC),
   INDEX `FK_property_owner_idx` (`owner_id` ASC),
   CONSTRAINT `FK_property_location`
-    FOREIGN KEY (`location_id`)
-    REFERENCES `dwell_shop`.`locations` (`id`)
-    ON DELETE NO ACTION
+  FOREIGN KEY (`location_id`)
+  REFERENCES `dwell_shop`.`locations` (`id`)
+    ON DELETE CASCADE
     ON UPDATE NO ACTION,
   CONSTRAINT `FK_property_owner`
-    FOREIGN KEY (`owner_id`)
-    REFERENCES `dwell_shop`.`users` (`id`)
+  FOREIGN KEY (`owner_id`)
+  REFERENCES `dwell_shop`.`users` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+  ENGINE = InnoDB;

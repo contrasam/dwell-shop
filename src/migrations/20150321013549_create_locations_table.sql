@@ -1,3 +1,5 @@
+DROP TABLE IF EXISTS `dwell_shop`.`locations` ;
+
 CREATE TABLE IF NOT EXISTS `dwell_shop`.`locations` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `street_number` INT NULL,
@@ -10,7 +12,7 @@ CREATE TABLE IF NOT EXISTS `dwell_shop`.`locations` (
   `latitude` DECIMAL(9,6) NULL,
   `longitude` DECIMAL(9,6) NULL,
   PRIMARY KEY (`id`),
-  FULLTEXT INDEX `CITY` (`city` ASC),
-  FULLTEXT INDEX `STATE` (`state` ASC),
-  FULLTEXT INDEX `STREET_NAME` (`street_name` ASC))
-ENGINE = MyISAM;
+  INDEX `CITY` (`city` ASC),
+  INDEX `STATE` (`state` ASC),
+  INDEX `STREET_NAME` (`street_name` ASC))
+  ENGINE = InnoDB;
