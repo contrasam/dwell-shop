@@ -14,6 +14,11 @@ public class StepDefinitions {
 
     private User user;
 
+    @Before
+    public void setUp() {
+        Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/dwell_shop", "root", "");
+    }
+
     @Given("^I am a new user to Dwell Shop$")
     public void i_am_a_new_user_to_Dwell_Shop() throws Throwable {
         this.user = new User();
@@ -37,5 +42,11 @@ public class StepDefinitions {
     public void i_should_be_shown_a_message_as(String arg1) throws Throwable {
         // Write code here that turns the phrase above into concrete actions
         throw new PendingException();
+    }
+
+    @After
+    public void tearDown() {
+        this.user.delete();
+        Base.close();
     }
 }
