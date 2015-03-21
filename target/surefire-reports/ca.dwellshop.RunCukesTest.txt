@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: ca.dwellshop.RunCukesTest
 -------------------------------------------------------------------------------
-Tests run: 18, Failures: 0, Errors: 0, Skipped: 6, Time elapsed: 0.835 sec
+Tests run: 18, Failures: 0, Errors: 0, Skipped: 6, Time elapsed: 0.765 sec

@@ -1,6 +1,7 @@
 package ca.dwellshop;
 
 import ca.dwellshop.models.User;
+import cucumber.api.PendingException;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
@@ -12,11 +13,6 @@ import static org.javalite.test.jspec.JSpec.*;
 public class StepDefinitions {
 
     private User user;
-
-    @Before
-    public void setup() {
-        Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/dwell_shop", "root", "1234");
-    }
 
     @Given("^I am a new user to Dwell Shop$")
     public void i_am_a_new_user_to_Dwell_Shop() throws Throwable {
@@ -37,10 +33,9 @@ public class StepDefinitions {
         this.user.set("password",password);
     }
 
-
-
-    @After
-    public void tearDown() {
-        Base.close();
+    @Then("^I should be shown a message as \"(.*?)\"$")
+    public void i_should_be_shown_a_message_as(String arg1) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
     }
 }

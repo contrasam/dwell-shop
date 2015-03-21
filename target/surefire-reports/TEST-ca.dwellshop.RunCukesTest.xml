@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.011" errors="0" skipped="6" tests="18" name="ca.dwellshop.RunCukesTest">
+<testsuite failures="0" time="0.032" errors="0" skipped="6" tests="18" name="ca.dwellshop.RunCukesTest">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.7.0_51\jre\bin"/>
@@ -64,31 +64,31 @@
   <testcase time="0" classname="| &quot;john.doe@mary.com&quot; | &quot;test@123&quot; | &quot;Account created successfully.&quot; |" name="Given I am a new user to Dwell Shop"/>
   <testcase time="0" classname="| &quot;john.doe@mary.com&quot; | &quot;test@123&quot; | &quot;Account created successfully.&quot; |" name="When I enter my personal details"/>
   <testcase time="0" classname="| &quot;john.doe@mary.com&quot; | &quot;test@123&quot; | &quot;Account created successfully.&quot; |" name="And I provide my &quot;john.doe@mary.com&quot; and &quot;test@123&quot;"/>
-  <testcase time="0.001" classname="| &quot;john.doe@mary.com&quot; | &quot;test@123&quot; | &quot;Account created successfully.&quot; |" name="Then I should be shown a message as &quot;Account created successfully.&quot;">
+  <testcase time="0.004" classname="| &quot;john.doe@mary.com&quot; | &quot;test@123&quot; | &quot;Account created successfully.&quot; |" name="Then I should be shown a message as &quot;Account created successfully.&quot;">
     <skipped/>
   </testcase>
-  <testcase time="0.002" classname="| &quot;john.doe@mary.com&quot; | &quot;test@123&quot; | &quot;Account created successfully.&quot; |" name="| &quot;john.doe@mary.com&quot; | &quot;test@123&quot; | &quot;Account created successfully.&quot; |">
+  <testcase time="0.004" classname="| &quot;john.doe@mary.com&quot; | &quot;test@123&quot; | &quot;Account created successfully.&quot; |" name="| &quot;john.doe@mary.com&quot; | &quot;test@123&quot; | &quot;Account created successfully.&quot; |">
     <skipped/>
   </testcase>
-  <testcase time="0.002" classname="| &quot;john.doe@mary.com&quot; | &quot;test@123&quot; | &quot;Account created successfully.&quot; |" name="| &quot;john.doe@mary.com&quot; | &quot;test@123&quot; | &quot;Account created successfully.&quot; |"/>
+  <testcase time="0.004" classname="| &quot;john.doe@mary.com&quot; | &quot;test@123&quot; | &quot;Account created successfully.&quot; |" name="| &quot;john.doe@mary.com&quot; | &quot;test@123&quot; | &quot;Account created successfully.&quot; |"/>
   <testcase time="0" classname="| &quot;doe.john@mary.com&quot; | &quot;test@123&quot; | &quot;The provided email address already exists, try logging in.&quot; |" name="Given I am a new user to Dwell Shop"/>
-  <testcase time="0" classname="| &quot;doe.john@mary.com&quot; | &quot;test@123&quot; | &quot;The provided email address already exists, try logging in.&quot; |" name="When I enter my personal details"/>
-  <testcase time="0.001" classname="| &quot;doe.john@mary.com&quot; | &quot;test@123&quot; | &quot;The provided email address already exists, try logging in.&quot; |" name="And I provide my &quot;doe.john@mary.com&quot; and &quot;test@123&quot;"/>
-  <testcase time="0.001" classname="| &quot;doe.john@mary.com&quot; | &quot;test@123&quot; | &quot;The provided email address already exists, try logging in.&quot; |" name="Then I should be shown a message as &quot;The provided email address already exists, try logging in.&quot;">
+  <testcase time="0.001" classname="| &quot;doe.john@mary.com&quot; | &quot;test@123&quot; | &quot;The provided email address already exists, try logging in.&quot; |" name="When I enter my personal details"/>
+  <testcase time="0" classname="| &quot;doe.john@mary.com&quot; | &quot;test@123&quot; | &quot;The provided email address already exists, try logging in.&quot; |" name="And I provide my &quot;doe.john@mary.com&quot; and &quot;test@123&quot;"/>
+  <testcase time="0.002" classname="| &quot;doe.john@mary.com&quot; | &quot;test@123&quot; | &quot;The provided email address already exists, try logging in.&quot; |" name="Then I should be shown a message as &quot;The provided email address already exists, try logging in.&quot;">
     <skipped/>
   </testcase>
-  <testcase time="0.002" classname="| &quot;doe.john@mary.com&quot; | &quot;test@123&quot; | &quot;The provided email address already exists, try logging in.&quot; |" name="| &quot;doe.john@mary.com&quot; | &quot;test@123&quot; | &quot;The provided email address already exists, try logging in.&quot; |">
+  <testcase time="0.003" classname="| &quot;doe.john@mary.com&quot; | &quot;test@123&quot; | &quot;The provided email address already exists, try logging in.&quot; |" name="| &quot;doe.john@mary.com&quot; | &quot;test@123&quot; | &quot;The provided email address already exists, try logging in.&quot; |">
     <skipped/>
   </testcase>
-  <testcase time="0.002" classname="| &quot;doe.john@mary.com&quot; | &quot;test@123&quot; | &quot;The provided email address already exists, try logging in.&quot; |" name="| &quot;doe.john@mary.com&quot; | &quot;test@123&quot; | &quot;The provided email address already exists, try logging in.&quot; |"/>
+  <testcase time="0.003" classname="| &quot;doe.john@mary.com&quot; | &quot;test@123&quot; | &quot;The provided email address already exists, try logging in.&quot; |" name="| &quot;doe.john@mary.com&quot; | &quot;test@123&quot; | &quot;The provided email address already exists, try logging in.&quot; |"/>
   <testcase time="0" classname="| &quot;john.doe@mary.com&quot; | &quot;was&quot; | &quot;The password have to be at least eight characters long.&quot; |" name="Given I am a new user to Dwell Shop"/>
   <testcase time="0" classname="| &quot;john.doe@mary.com&quot; | &quot;was&quot; | &quot;The password have to be at least eight characters long.&quot; |" name="When I enter my personal details"/>
-  <testcase time="0" classname="| &quot;john.doe@mary.com&quot; | &quot;was&quot; | &quot;The password have to be at least eight characters long.&quot; |" name="And I provide my &quot;john.doe@mary.com&quot; and &quot;was&quot;"/>
-  <testcase time="0" classname="| &quot;john.doe@mary.com&quot; | &quot;was&quot; | &quot;The password have to be at least eight characters long.&quot; |" name="Then I should be shown a message as &quot;The password have to be at least eight characters long.&quot;">
+  <testcase time="0.001" classname="| &quot;john.doe@mary.com&quot; | &quot;was&quot; | &quot;The password have to be at least eight characters long.&quot; |" name="And I provide my &quot;john.doe@mary.com&quot; and &quot;was&quot;"/>
+  <testcase time="0.003" classname="| &quot;john.doe@mary.com&quot; | &quot;was&quot; | &quot;The password have to be at least eight characters long.&quot; |" name="Then I should be shown a message as &quot;The password have to be at least eight characters long.&quot;">
     <skipped/>
   </testcase>
-  <testcase time="0" classname="| &quot;john.doe@mary.com&quot; | &quot;was&quot; | &quot;The password have to be at least eight characters long.&quot; |" name="| &quot;john.doe@mary.com&quot; | &quot;was&quot; | &quot;The password have to be at least eight characters long.&quot; |">
+  <testcase time="0.003" classname="| &quot;john.doe@mary.com&quot; | &quot;was&quot; | &quot;The password have to be at least eight characters long.&quot; |" name="| &quot;john.doe@mary.com&quot; | &quot;was&quot; | &quot;The password have to be at least eight characters long.&quot; |">
     <skipped/>
   </testcase>
-  <testcase time="0" classname="| &quot;john.doe@mary.com&quot; | &quot;was&quot; | &quot;The password have to be at least eight characters long.&quot; |" name="| &quot;john.doe@mary.com&quot; | &quot;was&quot; | &quot;The password have to be at least eight characters long.&quot; |"/>
+  <testcase time="0.004" classname="| &quot;john.doe@mary.com&quot; | &quot;was&quot; | &quot;The password have to be at least eight characters long.&quot; |" name="| &quot;john.doe@mary.com&quot; | &quot;was&quot; | &quot;The password have to be at least eight characters long.&quot; |"/>
 </testsuite>

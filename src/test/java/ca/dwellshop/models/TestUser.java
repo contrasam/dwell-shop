@@ -16,7 +16,7 @@ public class TestUser {
 
     @Before
     public void setUp() {
-        Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/dwell_shop", "root", "1234");
+        Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/dwell_shop", "root", "");
         this.user = new User();
     }
 

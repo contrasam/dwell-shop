@@ -6,10 +6,7 @@ import org.javalite.activeweb.AppContext;
 public class DbConfig extends AbstractDBConfig {
 
     public void init(AppContext context) {
-
-        //uncomment and configure:
-//        environment("development").jdbc("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/db_name_development", "root", "");
-//        environment("development").testing().jdbc("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/db_name_test", "root", "");
-//        environment("production").jndi("jdbc/datasource_name_production");
+        environment("development").jdbc("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/dwell_shop", "root", "1234");
+        environment("development").testing().jdbc("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/dwell_shop", "root", "1234");
     }
 }

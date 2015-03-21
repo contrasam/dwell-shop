@@ -60,6 +60,11 @@
     </dependency>
     <dependency>
       <groupId>org.javalite</groupId>
+      <artifactId>db-migrator-maven-plugin</artifactId>
+      <version>1.4.9</version>
+    </dependency>
+    <dependency>
+      <groupId>org.javalite</groupId>
       <artifactId>activeweb</artifactId>
       <version>1.11</version>
     </dependency>
@@ -99,6 +104,24 @@
             </goals>
           </execution>
         </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.javalite</groupId>
+        <artifactId>db-migrator-maven-plugin</artifactId>
+        <version>1.4.9</version>
+        <configuration>
+          <driver>com.mysql.jdbc.Driver</driver>
+          <url>jdbc:mysql://localhost/dwell_shop</url>
+          <username>root</username>
+          <password></password>
+        </configuration>
+        <dependencies>
+          <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.6</version>
+          </dependency>
+        </dependencies>
       </plugin>
     </plugins>
   </build>

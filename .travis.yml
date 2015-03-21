@@ -1,4 +1,7 @@
 language: java
+before_script:
+  - mysql -e 'create database dwell_shop;'
+  - mvn db-migrator:migrate
 jdk:
   - oraclejdk8
   - oraclejdk7
