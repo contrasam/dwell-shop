@@ -113,7 +113,7 @@
           <driver>com.mysql.jdbc.Driver</driver>
           <url>jdbc:mysql://localhost/dwell_shop</url>
           <username>root</username>
-          <password>1234</password>
+          <password></password>
         </configuration>
         <dependencies>
           <dependency>
