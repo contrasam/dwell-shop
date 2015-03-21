@@ -1,26 +1,46 @@
 package ca.dwellshop;
 
+import ca.dwellshop.models.User;
+import cucumber.api.java.After;
+import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import cucumber.api.PendingException;
+import org.javalite.activejdbc.Base;
+import static org.javalite.test.jspec.JSpec.*;
 
 public class StepDefinitions {
-        @Given("^I have (\\d+) cukes in my belly$")
-        public void i_have_cukes_in_my_belly(int arg1) throws Throwable {
-         // Write code here that turns the phrase above into concrete actions
-         throw new PendingException();
-        }
-    
-        @When("^I wait (\\d+) hour$")
-        public void i_wait_hour(int arg1) throws Throwable {
-         // Write code here that turns the phrase above into concrete actions
-         throw new PendingException();
-        }
-    
-        @Then("^my belly should growl$")
-        public void my_belly_should_growl() throws Throwable {
-         // Write code here that turns the phrase above into concrete actions
-         throw new PendingException();
-        }
+
+    private User user;
+
+    @Before
+    public void setup() {
+        Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://localhost/dwell_shop", "root", "1234");
+    }
+
+    @Given("^I am a new user to Dwell Shop$")
+    public void i_am_a_new_user_to_Dwell_Shop() throws Throwable {
+        this.user = new User();
+    }
+
+    @When("^I enter my personal details$")
+    public void i_enter_my_personal_details() throws Throwable {
+        this.user.set("first_name","John");
+        this.user.set("last_name","Doe");
+        this.user.set("profession","Engineer");
+        this.user.set("company","Some Inc.");
+    }
+
+    @When("^I provide my \"(.*?)\" and \"(.*?)\"$")
+    public void i_provide_my_and(String email_address, String password) throws Throwable {
+        this.user.set("email_address",email_address);
+        this.user.set("password",password);
+    }
+
+
+
+    @After
+    public void tearDown() {
+        Base.close();
+    }
 }

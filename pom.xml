@@ -12,6 +12,11 @@
   </properties>
   <dependencies>
     <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>5.1.6</version>
+    </dependency>
+    <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.11</version>
@@ -43,6 +48,36 @@
 	<artifactId>cucumber-picocontainer</artifactId>
 	<version>1.2.2</version>
     </dependency>
+    <dependency>
+      <groupId>org.javalite</groupId>
+      <artifactId>activejdbc</artifactId>
+      <version>1.4.9</version>
+    </dependency>
+    <dependency>
+      <groupId>org.javalite</groupId>
+      <artifactId>javalite-common</artifactId>
+      <version>1.4.9</version>
+    </dependency>
+    <dependency>
+      <groupId>org.javalite</groupId>
+      <artifactId>activeweb</artifactId>
+      <version>1.11</version>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>1.7.5</version>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-simple</artifactId>
+      <version>1.7.5</version>
+    </dependency>
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-core</artifactId>
+      <version>1.10.19</version>
+    </dependency>
   </dependencies>
   <build>
     <finalName>dwell-shop</finalName>
@@ -51,6 +86,19 @@
         <groupId>org.eclipse.jetty</groupId>
         <artifactId>jetty-maven-plugin</artifactId>
         <version>${jettyVersion}</version>
+      </plugin>
+      <plugin>
+        <groupId>org.javalite</groupId>
+        <artifactId>activejdbc-instrumentation</artifactId>
+        <version>1.4.9</version>
+        <executions>
+          <execution>
+            <phase>process-classes</phase>
+            <goals>
+              <goal>instrument</goal>
+            </goals>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>
