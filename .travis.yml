@@ -1,6 +1,8 @@
 language: java
+env:
+  - DB=mysql
 before_script:
-  - mysql -e 'create database dwell_shop;'
+  - mysql -e "create database IF NOT EXISTS dwell_shop;" -u root
   - mvn db-migrator:migrate
 jdk:
   - oraclejdk8
