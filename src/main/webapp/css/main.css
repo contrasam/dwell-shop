@@ -1,5 +1,14 @@
+@font-face {
+    font-family: nobile-regular;
+    src: url(Nobile-Regular.ttf);
+}
+
+body {
+    font-family: nobile-regular;
+}
+
 .content{
-    margin-top: 50px;
+    margin-top: 70px;
 }
 
 .logo{
@@ -24,3 +33,39 @@
     text-align: center;
     line-height: 30px;
 }
+
+.login-form {
+    max-width: 300px;
+    margin: 60px auto 20px;
+    border-radius: 4px;
+    overflow: hidden;
+    text-align: center;
+    background-color: lightgray;
+    padding: 25px;
+    line-height: 5;
+}
+
+.text-box-top-margin{
+    margin-top: 15px;
+}
+
+.flexcontainer {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
+.large-column {
+    margin-right: 115px;
+    -webkit-flex: 2 0 0;
+    flex: 4 0 0;
+}
+.small-column {
+    margin-left: 115px;
+    -webkit-flex: 1 0 0;
+    flex: 1 0 0;
+}
+ 

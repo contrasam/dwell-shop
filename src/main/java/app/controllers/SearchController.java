@@ -7,6 +7,9 @@ import org.javalite.activeweb.AppController;
  */
 public class SearchController extends AppController {
     public void index(){
+        if(session("user_name") != null){
+            view("logged_in_user",session("user_name"));
+        }
 
     }
 }

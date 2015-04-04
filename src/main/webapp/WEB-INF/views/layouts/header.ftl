@@ -11,9 +11,15 @@
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#about">Search</a></li>
-                <li><a href="#contact">My Properties</a></li>
+                <li ><a href="${context_path}/home">Home</a></li>
+                <li ><a href="${context_path}/search">Search</a></li>
+                <#if logged_in_user??>
+                    <li><a href="${context_path}/property">My Properties</a></li>
+                    <li><a href="${context_path}/home/logout">Logout</a></li>
+                    <p class="navbar-text navbar-right">Signed in as <a href="#" class="navbar-link">${logged_in_user}</a></p>
+                <#else>
+                    <li><a href="${context_path}/home/login_form">Login</a></li>
+                </#if>
             </ul>
             <img src="${context_path}/images/logo.png" class="logo"/>
         </div><!--/.nav-collapse -->
