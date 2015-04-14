@@ -8,7 +8,10 @@
 
     <link rel="favicon" href="${context_path}/images/favicon.ico" />
     <link href="${context_path}/css/bootstrap.css" rel="stylesheet">
+    <link href="${context_path}/css/bootstrap-slider.css" rel="stylesheet">
+    <link href="${context_path}/css/switchery.css" rel="stylesheet" />
     <link href="${context_path}/css/main.css" rel="stylesheet">
+
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -18,6 +21,9 @@
     <![endif]-->
     <script src="https://code.jquery.com/jquery-git2.js"></script>
     <script src="${context_path}/js/bootstrap.js"></script>
+    <script src="${context_path}/js/bootstrap-slider.js"></script>
+    <script src="${context_path}/js/switchery.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>
     <script src="${context_path}/js/main.js"></script>
 </head>
 

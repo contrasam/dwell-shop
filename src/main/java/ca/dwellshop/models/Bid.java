@@ -21,6 +21,10 @@ public class Bid extends Model {
             return "The bidding amount should be higher than the minimum bidding price.";
         }
         if(bid.saveIt()){
+            int numberOfBids = Integer.parseInt(property.get("number_of_bids").toString());
+            numberOfBids = numberOfBids +1;
+            property.set("number_of_bids",numberOfBids);
+            property.saveIt();
             return "The bid was placed successfully.";
         }
         return "Unexpected error occurred, please try again later";

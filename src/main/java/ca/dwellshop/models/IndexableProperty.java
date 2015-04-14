@@ -25,6 +25,13 @@ public class IndexableProperty {
     private String country;
     private BigDecimal latitude;
     private BigDecimal longitude;
+    private BigDecimal price;
+
+    public BigDecimal getPrice(){return price; }
+
+    public void setPrice(BigDecimal price){
+        this.price = price;
+    }
 
     public int getStreet_number() {
         return street_number;

@@ -121,14 +121,15 @@ public class StepDefinitions {
 
     @When("^I select a minimum price and a maximum price$")
     public void i_select_a_minimum_price_and_a_maximum_price() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+        SearchProperties.setSearchQuery("");
+        SearchProperties.setType("");
+        SearchProperties.setNumberOfRooms("");
+        SearchProperties.setPriceRange("", "");
     }
 
     @Then("^I should b shown properties only within that price range$")
     public void i_should_b_shown_properties_only_within_that_price_range() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+        List<IndexableProperty> searchResults = SearchProperties.search();
     }
 
     @Given("^I have selected a property to bid on$")

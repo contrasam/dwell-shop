@@ -16,6 +16,8 @@ public class SearchProperties {
     private static String searchQuery = "*";
     private static String type;
     private static String numberOfRooms;
+    private static String minimumPrice;
+    private static String maximumPrice;
 
     public static void setRegion(String type, String name) {
         region = new HashMap<String, String>();
@@ -41,6 +43,11 @@ public class SearchProperties {
         return SearchProperties.searchQuery;
     }
 
+    public static void setPriceRange(String minimumPrice, String maximumPrice) {
+        SearchProperties.minimumPrice = minimumPrice;
+        SearchProperties.maximumPrice = maximumPrice;
+    }
+
     public static void setNumberOfRooms(String numberOfRooms) {
         SearchProperties.numberOfRooms = numberOfRooms;
     }
@@ -61,6 +68,7 @@ public class SearchProperties {
         String finalQuery;
         String typeQuery;
         String numberOfRoomsQuery;
+        String priceQuery;
         if (SearchProperties.searchQuery == null || SearchProperties.searchQuery.equals("")) {
             SearchProperties.searchQuery = "*";
         }
@@ -74,7 +82,12 @@ public class SearchProperties {
         } else {
             numberOfRoomsQuery = " AND number_of_rooms:" + SearchProperties.numberOfRooms;
         }
-        finalQuery = SearchProperties.searchQuery + typeQuery + numberOfRoomsQuery;
+        if ((SearchProperties.minimumPrice == null || SearchProperties.minimumPrice.equals("")) && (SearchProperties.maximumPrice == null || SearchProperties.maximumPrice.equals(""))) {
+            priceQuery = "";
+        } else {
+            priceQuery = " AND price:[" + SearchProperties.minimumPrice + " TO " + SearchProperties.maximumPrice + "]";
+        }
+        finalQuery = SearchProperties.searchQuery + typeQuery + numberOfRoomsQuery + priceQuery;
         SearchResults<IndexableProperty> results = client.searchCollection("properties").get(IndexableProperty.class, finalQuery).get();
         List<IndexableProperty> searchResults = new ArrayList<IndexableProperty>();
         for (Result<IndexableProperty> result : results) {
@@ -93,6 +106,21 @@ public class SearchProperties {
         indexableProperty.setNumber_of_rooms((Integer) property.get("number_of_rooms"));
         indexableProperty.setSale_status((String) property.get("sale_status"));
         indexableProperty.setSale_type((String) property.get("sale_type"));
+        if (property.get("sale_type").toString().equals("buyable")) {
+            List<BuyableProperty> buyableProperties = BuyableProperty.where("property_id=?", property.getId());
+            if (buyableProperties.size() > 0) {
+                indexableProperty.setPrice(new BigDecimal(buyableProperties.get(0).get("price").toString()));
+            } else {
+                indexableProperty.setPrice(new BigDecimal("0"));
+            }
+        } else if (property.get("sale_type").toString().equals("biddable")) {
+            List<BiddableProperty> biddableProperties = BiddableProperty.where("property_id=?", property.getId());
+            if (biddableProperties.size() > 0) {
+                indexableProperty.setPrice(new BigDecimal(biddableProperties.get(0).get("minimum_bidding_price").toString()));
+            } else {
+                indexableProperty.setPrice(new BigDecimal("0"));
+            }
+        }
         indexableProperty.setSub_type((String) property.get("sub_type"));
         indexableProperty.setType((String) property.get("type"));
         indexableProperty.setYear((Date) property.get("year"));
